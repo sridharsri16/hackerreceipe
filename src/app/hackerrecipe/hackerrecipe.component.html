@@ -1,0 +1,34 @@
+<div *ngIf="!clicked">
+  <div class="containerr-fluid">
+    <div class="row">
+      <div class="col-5">
+        <i class="fa fa-search" aria-hidden="true"></i>
+        <input class="form-control mr-sm-2" id="search" type="search" placeholder="Search your favourite receipe">
+      </div>
+      <div class="col-2">
+        <button class="btn btn-outline-success my-2 my-sm-0" (click)="Search()">Search</button>
+      </div>
+    </div>
+    <br><br>
+    <div class="card-columns">
+      <div class="card" *ngFor="let i of listData; index as sno">
+        <img class="card-img-top" [src]="i.image" alt="Card image cap" (click)="transferid(i.id)">
+        <div class="card-body">
+          <h5 class="card-title">{{i.name}}</h5>
+          <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus vitae ipsum nisi. Nunc
+            tincidunt sagittis diam, vulputate accumsan arcu. Donec placerat ligula in nisl tincidunt, ac imperdiet odio
+            eleifend.</p>
+          <footer class="blockquote-footer">
+            <small class="text-muted">
+              Lorem ipsum dolor <cite title="Source Title">Lorem ipsum dolor sit amet, consectetur adipiscing
+                elit.</cite>
+            </small>
+          </footer>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div *ngIf="clicked">
+  <app-hackerrecipedetails (value)="valuefromchild($event)"></app-hackerrecipedetails>
+</div>
