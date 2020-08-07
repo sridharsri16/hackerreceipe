@@ -9,7 +9,7 @@ const routes: Routes = [
     path: "hackerrecepiedetails/:id", component: HackerrecipedetailsComponent,
   },
   
-  { path: "", component: HackerrecipeComponent, },
+  { path: "", component: HackerrecipeComponent,pathMatch: "full" },
   { path: '**', component: HackerrecipeComponent, }
 ];
 
